@@ -1,4 +1,4 @@
-package com.antonio.entregaagil
+package com.antonio.entregaagil.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 

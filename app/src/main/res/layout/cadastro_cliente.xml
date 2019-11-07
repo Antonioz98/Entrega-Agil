@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/cadastro_cliente_nome"
@@ -34,6 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Número"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_nome"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/cadastro_cliente_endereco"
@@ -54,7 +54,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:drawableEnd="@drawable/ic_calendario"
+        android:cursorVisible="false"
+        android:drawableStart="@drawable/ic_calendario"
+        android:drawablePadding="8dp"
+        android:focusable="false"
+        android:inputType="date"
         android:text="__/__/____"
         app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
         app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_bairro" />
@@ -72,10 +76,14 @@
 
     <EditText
         android:id="@+id/cadastro_cliente_termino_assinatura"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:drawableEnd="@drawable/ic_calendario"
+        android:cursorVisible="false"
+        android:drawableStart="@drawable/ic_calendario"
+        android:drawablePadding="8dp"
+        android:focusable="false"
+        android:inputType="date"
         android:text="__/__/____"
         app:layout_constraintStart_toEndOf="@id/cadastro_cliente_assinatura_ate"
         app:layout_constraintTop_toTopOf="@id/cadastro_cliente_inicio_assinatura" />
@@ -85,22 +93,24 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="25dp"
-        android:gravity="start"
-        android:padding="4dp"
         android:background="@drawable/borda_preta"
+        android:gravity="start"
         android:hint="informações complementares"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_nome"
         app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
         app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_inicio_assinatura" />
 
     <Button
         android:id="@+id/cadastro_cliente_cadastrar"
+        style="@style/AppButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
-        android:hint="Cadastrar"
+        android:textColor="@color/branco"
+        android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_complementar"
         app:layout_constraintStart_toStartOf="@id/cadastro_cliente_complementar"
         app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_complementar" />

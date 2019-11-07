@@ -1,5 +1,6 @@
 package com.antonio.entregaagil
 
+import com.antonio.entregaagil.ui.viewmodel.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

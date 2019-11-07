@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/botao_principal</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/verdeAgua</item>
+        <item name="colorSwitchThumbNormal">#f1f1f1</item>
+        <item name="android:colorForeground">#42221f1f</item>
+    </style>
+
+    <style name="TextLayoutInput" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 </resources>
