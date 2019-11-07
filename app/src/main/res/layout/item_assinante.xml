@@ -18,7 +18,7 @@
         android:paddingBottom="8dp">
 
         <TextView
-            android:id="@+id/item_cliente_nome"
+            android:id="@+id/assinantes_nome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -28,33 +28,33 @@
             tools:text="Antonio Neto" />
 
         <TextView
-            android:id="@+id/item_cliente_endereco"
+            android:id="@+id/assinante_endereco"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_cliente_nome"
+            app:layout_constraintTop_toBottomOf="@id/assinantes_nome"
             tools:text="Rua: Amaral da serra Nº102" />
 
         <TextView
-            android:id="@+id/item_cliente_bairro"
+            android:id="@+id/assinante_bairro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_cliente_endereco"
+            app:layout_constraintTop_toBottomOf="@id/assinante_endereco"
             tools:text="Bairro: centro" />
 
         <TextView
-            android:id="@+id/item_cliente_perido_assinatura"
+            android:id="@+id/assinante_perido_assinatura"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_cliente_bairro"
+            app:layout_constraintTop_toBottomOf="@id/assinante_bairro"
             tools:text="Periodo de assinatura: 10/01/2019 - 10/01/2020" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

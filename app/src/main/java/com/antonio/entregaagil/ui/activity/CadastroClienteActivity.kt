@@ -1,6 +1,7 @@
 package com.antonio.entregaagil.ui.activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.extension.formataDataResumida
@@ -38,6 +39,13 @@ class CadastroClienteActivity : AppCompatActivity() {
             }.show(supportFragmentManager, DATE_PICKER_FRAGMENT)
 
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun configurarDataFinal() {

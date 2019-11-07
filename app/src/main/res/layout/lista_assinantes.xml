@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista_rotas_recyclerView"
+        android:id="@+id/assinantes_recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -15,10 +15,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_lista_clientes" />
+        tools:listitem="@layout/item_assinante" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/lista_rotas_fab"
+        android:id="@+id/assinantes_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista_rotas_recyclerView"
+        android:id="@+id/rotas_recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -18,7 +18,7 @@
         tools:listitem="@layout/item_lista_rotas" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/lista_rotas_fab"
+        android:id="@+id/rotas_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
