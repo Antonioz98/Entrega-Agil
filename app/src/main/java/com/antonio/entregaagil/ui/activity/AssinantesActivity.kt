@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.assinantes
@@ -46,14 +47,33 @@ class AssinantesActivity : AppCompatActivity() {
         startActivityForResult(intent, ALTERAR_ASSINANTE)
     }
 
+    private fun solicitaConfirmacaoParaExcluir(posicao: Int) {
+            val builder = AlertDialog.Builder(this)
+
+            builder.apply {
+                setTitle("Confirmação")
+                setMessage("Este assinante será excluído, deseja continuar?")
+                setPositiveButton("Sim") { _, _ ->
+                    adapter.exclui(posicao)
+                }
+                setNegativeButton("nao") { _, _ -> }
+            }
+            val dialog = builder.create()
+            dialog.show()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val assinante = data?.getParcelableExtra<Assinante>(ASSINANTE_TAG)
             val posicao = data?.getIntExtra(ASSINANTE_POSICAO, 0)
             if (requestCode == ALTERAR_ASSINANTE) {
-                adapter.altera(assinante, posicao)
-                Toast.makeText(this, "alterar", Toast.LENGTH_SHORT).show()
+                if (data?.hasExtra(DELETAR) == true) {
+                    solicitaConfirmacaoParaExcluir(posicao!!)
+                } else {
+                    adapter.altera(assinante, posicao)
+                    Toast.makeText(this, "alterar", Toast.LENGTH_SHORT).show()
+                }
             }
             if (requestCode == ADICIONAR_ASSINANTE) {
                 adapter.adiciona(assinante)

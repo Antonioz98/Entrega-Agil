@@ -3,6 +3,7 @@ package com.antonio.entregaagil.ui.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.antonio.entregaagil.R
@@ -16,6 +17,7 @@ import java.util.*
 
 const val ASSINANTE_TAG = "ASSINANTE_INTENT"
 const val ASSINANTE_POSICAO = "ASSINANTE_POSICAO"
+const val DELETAR = "deletar"
 
 class FormularioAssinanteActivity : AppCompatActivity() {
 
@@ -85,11 +87,29 @@ class FormularioAssinanteActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.menu_deletar, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> finish()
+            R.id.menu_deletar -> deletar()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun deletar() {
+        val posicao = intent.getIntExtra(ASSINANTE_POSICAO, 0)
+        val intent = Intent()
+        intent.putExtra(ASSINANTE_TAG, assinante)
+        intent.putExtra(ASSINANTE_POSICAO, posicao)
+        intent.putExtra(DELETAR, true)
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
     private fun configurarDataFinal() {
