@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_rotas"
+        android:icon="@drawable/ic_rota"
+        android:title="Rotas" />
+
+    <item
+        android:id="@+id/navigation_assinantes"
+        android:icon="@drawable/ic_assinante"
+        android:title="Assinantes" />
+
+    <item
+        android:id="@+id/navigation_configuracao"
+        android:icon="@drawable/ic_engrenagem"
+        android:title="Configuração" />
+
+</menu>

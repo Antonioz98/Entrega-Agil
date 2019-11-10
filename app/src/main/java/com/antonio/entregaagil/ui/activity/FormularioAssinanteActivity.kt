@@ -85,7 +85,7 @@ class FormularioAssinanteActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.menu_deletar, menu)
+        menuInflater.inflate(R.menu.menu_formulario_assinante, menu)
 
         return super.onCreateOptionsMenu(menu)
     }

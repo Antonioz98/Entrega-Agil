@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_rotas">
+
+    <fragment
+        android:id="@+id/navigation_rotas"
+        android:name="com.antonio.entregaagil.ui.fragment.RotasFragment"
+        tools:layout="@layout/fragment_rotas" />
+
+    <fragment
+        android:id="@+id/navigation_assinantes"
+        android:name="com.antonio.entregaagil.ui.fragment.AssinantesFragment"
+        tools:layout="@layout/fragment_assinantes" />
+
+    <fragment
+        android:id="@+id/navigation_configuracao"
+        android:name="com.antonio.entregaagil.ui.fragment.AssinantesFragment"
+        tools:layout="@layout/fragment_assinantes" />
+</navigation>
