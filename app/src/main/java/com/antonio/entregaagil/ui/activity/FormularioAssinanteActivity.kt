@@ -10,21 +10,18 @@ import com.antonio.entregaagil.R
 import com.antonio.entregaagil.extension.formataDataResumida
 import com.antonio.entregaagil.modelo.Assinante
 import com.antonio.entregaagil.ui.dialog.PegarDataDialog
-import com.antonio.entregaagil.ui.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.formulario_assinante.*
-import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
 const val ASSINANTE_TAG = "ASSINANTE_INTENT"
 const val ASSINANTE_POSICAO = "ASSINANTE_POSICAO"
-const val DELETAR = "deletar"
+const val DELETAR_ASSINANTE = "deletar"
 
 class FormularioAssinanteActivity : AppCompatActivity() {
 
     private val DATE_PICKER_FRAGMENT = "PEGAR_DATA_FRAGMENT"
     private val dataInicio = Calendar.getInstance()
     private val dataFim = Calendar.getInstance()
-    private val mainViewModel by viewModel<MainViewModel>()
     private var assinante = Assinante()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +33,6 @@ class FormularioAssinanteActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        mainViewModel
         configurarDataFinal()
         configurarDataInicial()
         configuraBotaoSalvar()
@@ -107,7 +103,7 @@ class FormularioAssinanteActivity : AppCompatActivity() {
         val intent = Intent()
         intent.putExtra(ASSINANTE_TAG, assinante)
         intent.putExtra(ASSINANTE_POSICAO, posicao)
-        intent.putExtra(DELETAR, true)
+        intent.putExtra(DELETAR_ASSINANTE, true)
         setResult(Activity.RESULT_OK, intent)
         finish()
     }

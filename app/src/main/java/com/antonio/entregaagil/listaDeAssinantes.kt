@@ -1,6 +1,7 @@
 package com.antonio.entregaagil
 
 import com.antonio.entregaagil.modelo.Assinante
+import com.antonio.entregaagil.modelo.Rota
 
 
 fun assinantes(): List<Assinante> {
@@ -25,3 +26,27 @@ fun assinantes(): List<Assinante> {
         assinante9
     )
 }
+
+fun rotas(): List<Rota> {
+    val assinante1 = Rota()
+    val assinante2 = Rota()
+    val assinante3 = Rota()
+    val assinante4 = Rota()
+    val assinante5 = Rota()
+    val assinante6 = Rota()
+    val assinante7 = Rota()
+    val assinante8 = Rota()
+    val assinante9 = Rota()
+    return listOf(
+        assinante1,
+        assinante2,
+        assinante3,
+        assinante4,
+        assinante5,
+        assinante6,
+        assinante7,
+        assinante8,
+        assinante9
+    )
+}
+

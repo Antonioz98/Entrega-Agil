@@ -3,25 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
     android:orientation="vertical"
     android:paddingStart="12dp"
-    android:paddingTop="8dp"
     android:paddingEnd="12dp">
 
     <ImageView
         android:id="@+id/assinante_inicial"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        tools:background="@drawable/background_redondo_amarelo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/background_redondo_amarelo" />
 
     <TextView
         android:id="@+id/assinantes_nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/lato"
         android:textColor="@color/pretoClaro"
         android:textSize="18sp"
@@ -35,6 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/lato"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/lato"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +62,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/lato"
-        android:paddingBottom="8dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/assinante_inicial"
@@ -72,11 +75,13 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/assinante_perido_assinatura" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,7 @@ class AssinantesViewHolder(private val context: Context, itemView: View) :
 
         val drawable =
             TextDrawable.builder()
-                .buildRound("A", ContextCompat.getColor(context, R.color.amareloClaro))
+                .buildRound(assinante.nome[0].toString(), ContextCompat.getColor(context, R.color.amareloClaro))
         itemView.assinante_inicial.setImageDrawable(drawable)
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearSmoothScroller
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.assinantes
 import com.antonio.entregaagil.modelo.Assinante
@@ -68,7 +69,7 @@ class AssinantesActivity : AppCompatActivity() {
             val assinante = data?.getParcelableExtra<Assinante>(ASSINANTE_TAG)
             val posicao = data?.getIntExtra(ASSINANTE_POSICAO, 0)
             if (requestCode == ALTERAR_ASSINANTE) {
-                if (data?.hasExtra(DELETAR) == true) {
+                if (data?.hasExtra(DELETAR_ASSINANTE) == true) {
                     solicitaConfirmacaoParaExcluir(posicao!!)
                 } else {
                     adapter.altera(assinante, posicao)
@@ -77,7 +78,7 @@ class AssinantesActivity : AppCompatActivity() {
             }
             if (requestCode == ADICIONAR_ASSINANTE) {
                 adapter.adiciona(assinante)
-                Toast.makeText(this, "adicionar", Toast.LENGTH_SHORT).show()
+                scrollToFinal()
             }
         }
     }
@@ -87,5 +88,15 @@ class AssinantesActivity : AppCompatActivity() {
             val intent = Intent(this, FormularioAssinanteActivity::class.java)
             startActivityForResult(intent, ADICIONAR_ASSINANTE)
         }
+    }
+
+    private fun scrollToFinal() {
+        val smoothScroller = object : LinearSmoothScroller(this) {
+            override fun getVerticalSnapPreference(): Int {
+                return SNAP_TO_START
+            }
+        }
+        smoothScroller.targetPosition = adapter.itemCount
+        assinantes_recyclerView.layoutManager?.startSmoothScroll(smoothScroller)
     }
 }
