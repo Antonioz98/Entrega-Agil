@@ -33,7 +33,6 @@ class DetalhesRotaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
-        (activity as AppCompatActivity).supportActionBar?.hide()
 
         rota = arguments?.getParcelable(ROTA_TAG)!!
         fragment_detalhes_rota_titulo.text = rota.descricao
@@ -53,8 +52,13 @@ class DetalhesRotaFragment : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.hide()
+    }
+
+    override fun onStop() {
+        super.onStop()
         (activity as AppCompatActivity).supportActionBar?.show()
     }
 

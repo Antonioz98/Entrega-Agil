@@ -1,98 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/fragment_detalhes_rota_toolbar"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/fragment_detalhes_rota_titulo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="12dp"
-        android:maxLines="1"
-        android:text="Titulo"
-        android:textAlignment="center"
-        android:textColor="@color/branco"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
-        app:layout_constraintEnd_toStartOf="@id/fragment_detalhes_rota_fab"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/fragment_detalhes_rota_toolbar" />
-
-    <TextView
-        android:id="@+id/fragment_detalhes_rota_quantida"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="12dp"
-        android:maxLines="1"
-        android:text="assinates: 0/0"
-        android:textAlignment="textStart"
-        android:textColor="@color/branco"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
-        app:layout_constraintEnd_toStartOf="@id/fragment_detalhes_rota_fab"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/menu_editar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="18dp"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintEnd_toStartOf="@id/menu_excluir"
-        app:layout_constraintTop_toTopOf="@id/menu_excluir"
-        app:srcCompat="@drawable/ic_editar_branco" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/menu_excluir"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="8dp"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_delete_branco" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_detalhes_rota_assinantes_recyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_detalhes_rota_toolbar"
-        tools:listitem="@layout/item_detalhe_rota" />
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fragment_detalhes_rota_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:src="@android:drawable/ic_input_add"
-        android:tint="#ffffff"
-        app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_detalhes_rota_toolbar" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_detalhes_rota_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/fragment_detalhes_rota_titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="12dp"
+            android:maxLines="1"
+            android:text="Titulo"
+            android:textAlignment="center"
+            android:textColor="@color/branco"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
+            app:layout_constraintEnd_toStartOf="@id/fragment_detalhes_rota_fab"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fragment_detalhes_rota_toolbar" />
+
+        <TextView
+            android:id="@+id/fragment_detalhes_rota_quantida"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="12dp"
+            android:maxLines="1"
+            android:text="assinates: 0/0"
+            android:textAlignment="textStart"
+            android:textColor="@color/branco"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
+            app:layout_constraintEnd_toStartOf="@id/fragment_detalhes_rota_fab"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menu_editar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="18dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@id/menu_excluir"
+            app:layout_constraintTop_toTopOf="@id/menu_excluir"
+            app:srcCompat="@drawable/ic_editar_branco" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menu_excluir"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete_branco" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_detalhes_rota_assinantes_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_detalhes_rota_toolbar"
+            tools:listitem="@layout/item_detalhe_rota" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fragment_detalhes_rota_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@android:drawable/ic_input_add"
+            android:tint="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_detalhes_rota_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_detalhes_rota_toolbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
