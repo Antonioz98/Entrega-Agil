@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/assinantes_recyclerView"
+        android:id="@+id/fragment_assinantes_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -19,7 +19,7 @@
         tools:listitem="@layout/item_assinante" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/assinantes_fab"
+        android:id="@+id/fragment_assinantes_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

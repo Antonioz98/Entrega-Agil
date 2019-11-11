@@ -8,15 +8,48 @@
     <fragment
         android:id="@+id/navigation_rotas"
         android:name="com.antonio.entregaagil.ui.fragment.RotasFragment"
-        tools:layout="@layout/fragment_rotas" />
+        tools:layout="@layout/fragment_rotas" >
+        <action
+            android:id="@+id/rotas_to_navigation_detalhes_rota"
+            app:destination="@id/navigation_detalhes_rota" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_assinantes"
         android:name="com.antonio.entregaagil.ui.fragment.AssinantesFragment"
-        tools:layout="@layout/fragment_assinantes" />
+        tools:layout="@layout/fragment_assinantes" >
+        <action
+            android:id="@+id/assinantes_to_formularioAssinanteFragment"
+            app:destination="@id/navigation_formulario_assinante"
+            app:popUpToInclusive="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_configuracao"
         android:name="com.antonio.entregaagil.ui.fragment.AssinantesFragment"
         tools:layout="@layout/fragment_assinantes" />
+
+    <fragment
+        android:id="@+id/navigation_formulario_assinante"
+        android:name="com.antonio.entregaagil.ui.fragment.FormularioAssinanteFragment"
+        tools:layout="@layout/fragment_formulario_assinante" >
+        <argument
+            android:name="assinante"
+            app:argType="com.antonio.entregaagil.modelo.Assinante"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detalhes_rota"
+        android:name="com.antonio.entregaagil.ui.fragment.DetalhesRotaFragment"
+        tools:layout="@layout/fragment_detalhes_rota" >
+        <argument
+            android:name="rota"
+            app:argType="com.antonio.entregaagil.modelo.Rota"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/detalhes_rota_to_navigation_formulario_assinante"
+            app:destination="@id/navigation_formulario_assinante" />
+    </fragment>
 </navigation>

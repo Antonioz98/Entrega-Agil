@@ -1,0 +1,145 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingStart="12dp"
+    android:paddingEnd="8dp">
+
+    <TextView
+        android:id="@+id/detalhe_rota_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/cinza"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nome e Sobrenome" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_endereco_ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:text="Rua: "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_nome" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_endereco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/cinza"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detalhe_rota_endereco_ref"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_nome"
+        tools:text="Amaral da serra" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_numero_ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:text="numero: "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_endereco" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_numero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/cinza"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detalhe_rota_numero_ref"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_endereco"
+        tools:text="102" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_bairro_ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:text="Bairro: "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_numero" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_bairro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/cinza"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detalhe_rota_bairro_ref"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_numero"
+        tools:text="Centro" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_complemento_ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:text="Complemento: "
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_bairro" />
+
+    <TextView
+        android:id="@+id/detalhe_rota_complemento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/cinza"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detalhe_rota_complemento_ref"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_bairro"
+        tools:text="entregar no fundo" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhe_rota_complemento_ref" />
+</androidx.constraintlayout.widget.ConstraintLayout>

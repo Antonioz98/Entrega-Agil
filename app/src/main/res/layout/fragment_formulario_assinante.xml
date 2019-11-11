@@ -12,7 +12,7 @@
         android:paddingBottom="25dp">
 
         <EditText
-            android:id="@+id/cadastro_cliente_nome"
+            android:id="@+id/fragment_formulario_assinante_nome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -24,39 +24,39 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_endereco"
+            android:id="@+id/fragment_formulario_assinante_endereco"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:hint="Endereço"
-            app:layout_constraintEnd_toStartOf="@id/cadastro_cliente_numero"
+            app:layout_constraintEnd_toStartOf="@id/fragment_formulario_assinante_numero"
             app:layout_constraintHorizontal_weight="3"
-            app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
-            app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_nome" />
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_nome" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_numero"
+            android:id="@+id/fragment_formulario_assinante_numero"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Número"
             android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_nome"
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_nome"
             app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/cadastro_cliente_endereco"
-            app:layout_constraintTop_toTopOf="@id/cadastro_cliente_endereco" />
+            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_endereco"
+            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_endereco" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_bairro"
+            android:id="@+id/fragment_formulario_assinante_bairro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:hint="Bairro"
-            app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_numero"
-            app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
-            app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_endereco" />
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_numero"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_endereco" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_inicio_assinatura"
+            android:id="@+id/fragment_formulario_assinante_inicio_assinatura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -64,24 +64,24 @@
             android:drawableStart="@drawable/ic_calendario"
             android:drawablePadding="8dp"
             android:focusable="false"
+            android:hint="__/__/____"
             android:inputType="date"
-            android:text="__/__/____"
-            app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
-            app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_bairro" />
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_bairro" />
 
         <TextView
-            android:id="@+id/cadastro_cliente_assinatura_ate"
+            android:id="@+id/fragment_formulario_assinante_assinatura_ate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="até"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/cadastro_cliente_inicio_assinatura"
-            app:layout_constraintStart_toEndOf="@id/cadastro_cliente_inicio_assinatura"
-            app:layout_constraintTop_toTopOf="@id/cadastro_cliente_inicio_assinatura" />
+            app:layout_constraintBottom_toBottomOf="@id/fragment_formulario_assinante_inicio_assinatura"
+            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_inicio_assinatura"
+            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_inicio_assinatura" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_termino_assinatura"
+            android:id="@+id/fragment_formulario_assinante_termino_assinatura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -89,13 +89,13 @@
             android:drawableStart="@drawable/ic_calendario"
             android:drawablePadding="8dp"
             android:focusable="false"
+            android:hint="__/__/____"
             android:inputType="date"
-            android:text="__/__/____"
-            app:layout_constraintStart_toEndOf="@id/cadastro_cliente_assinatura_ate"
-            app:layout_constraintTop_toTopOf="@id/cadastro_cliente_inicio_assinatura" />
+            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_assinatura_ate"
+            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_inicio_assinatura" />
 
         <EditText
-            android:id="@+id/cadastro_cliente_complementar"
+            android:id="@+id/fragment_formulario_assinante_complemento"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_marginTop="25dp"
@@ -103,12 +103,12 @@
             android:gravity="start"
             android:hint="informações complementares"
             android:padding="4dp"
-            app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_nome"
-            app:layout_constraintStart_toStartOf="@id/cadastro_cliente_nome"
-            app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_inicio_assinatura" />
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_inicio_assinatura" />
 
         <Button
-            android:id="@+id/cadastro_cliente_salvar"
+            android:id="@+id/fragment_formulario_assinante_salvar"
             style="@style/AppButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -117,10 +117,8 @@
             android:layout_marginEnd="25dp"
             android:text="Salvar"
             android:textColor="@color/branco"
-            app:layout_constraintEnd_toEndOf="@id/cadastro_cliente_complementar"
-            app:layout_constraintStart_toStartOf="@id/cadastro_cliente_complementar"
-            app:layout_constraintTop_toBottomOf="@id/cadastro_cliente_complementar" />
-
-
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_complemento"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_complemento"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_complemento" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

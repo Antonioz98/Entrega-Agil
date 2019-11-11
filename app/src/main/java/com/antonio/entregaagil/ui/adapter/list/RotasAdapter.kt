@@ -14,7 +14,7 @@ class RotasAdapter(private val context: Context) : RecyclerView.Adapter<RotasVie
     var clickListener: ((Rota, Int) -> Unit) = { _, _ -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RotasViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_rotas, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_rota, parent, false)
 
         return RotasViewHolder(context, view)
     }

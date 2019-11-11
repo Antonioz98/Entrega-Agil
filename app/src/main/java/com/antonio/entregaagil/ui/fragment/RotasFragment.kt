@@ -1,7 +1,5 @@
 package com.antonio.entregaagil.ui.fragment
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -9,24 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearSmoothScroller
 import com.antonio.entregaagil.R
+import com.antonio.entregaagil.constante.ROTA_TAG
 import com.antonio.entregaagil.modelo.Rota
 import com.antonio.entregaagil.rotas
-import com.antonio.entregaagil.ui.activity.DELETAR_ROTA
-import com.antonio.entregaagil.ui.activity.DetalhesRotaActivity
-import com.antonio.entregaagil.ui.activity.ROTA_POSICAO
-import com.antonio.entregaagil.ui.activity.ROTA_TAG
 import com.antonio.entregaagil.ui.adapter.list.RotasAdapter
 import com.antonio.entregaagil.ui.viewmodel.RotasViewModel
 import kotlinx.android.synthetic.main.fragment_rotas.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
-
-const val ALTERAR_ROTA = 14125
 
 class RotasFragment : Fragment() {
 
@@ -50,19 +43,18 @@ class RotasFragment : Fragment() {
     }
 
     private fun configuraAdapter() {
-        rotas_recyclerView.adapter = adapter
+        fragment_rotas_recyclerView.adapter = adapter
         val rotas = rotas()
         adapter.atualizaLista(rotas)
         adapter.clickListener = { rota, posicao ->
-            abreDetalheDaRota(rota, posicao)
+            abreDetalheDaRota(rota)
         }
     }
 
-    private fun abreDetalheDaRota(rota: Rota, posicao: Int) {
-        val intent = Intent(context, DetalhesRotaActivity::class.java)
-        intent.putExtra(ROTA_TAG, rota)
-        intent.putExtra(ROTA_POSICAO, posicao)
-        startActivityForResult(intent, ALTERAR_ROTA)
+    private fun abreDetalheDaRota(rota: Rota) {
+        val bundle = Bundle()
+        bundle.putParcelable(ROTA_TAG, rota)
+        fragment_rotas_recyclerView.findNavController().navigate(R.id.rotas_to_navigation_detalhes_rota, bundle)
     }
 
     private fun solicitaConfirmacaoParaExcluir(posicao: Int) {
@@ -81,7 +73,7 @@ class RotasFragment : Fragment() {
     }
 
     private fun confguraFAB() {
-        rotas_fab.setOnClickListener {
+        fragment_rotas_fab.setOnClickListener {
             val builder = AlertDialog.Builder(context!!)
             builder.setTitle("Descricao da nova rota")
             val input = EditText(context)
@@ -100,21 +92,6 @@ class RotasFragment : Fragment() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
-            val rota = data?.getParcelableExtra<Rota>(ROTA_TAG)
-            val posicao = data?.getIntExtra(ROTA_POSICAO, 0)
-            if (requestCode == ALTERAR_ROTA) {
-                if (data?.hasExtra(DELETAR_ROTA) == true) {
-                    solicitaConfirmacaoParaExcluir(posicao!!)
-                } else {
-                    adapter.altera(rota, posicao)
-                    Toast.makeText(context, "alterar", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
 
     private fun cadastraRota(descricao: String) {
         val rota = Rota()
@@ -129,6 +106,6 @@ class RotasFragment : Fragment() {
             }
         }
         smoothScroller.targetPosition = adapter.itemCount
-        rotas_recyclerView.layoutManager?.startSmoothScroll(smoothScroller)
+        fragment_rotas_recyclerView.layoutManager?.startSmoothScroll(smoothScroller)
     }
 }

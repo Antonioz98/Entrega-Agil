@@ -1,6 +1,8 @@
 package com.antonio.entregaagil.ui.activity
 
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -24,5 +26,19 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            destination.id
+            when (destination.id) {
+                R.id.navigation_formulario_assinante -> {
+                    navView.visibility = GONE
+                }
+                R.id.navigation_detalhes_rota -> {
+                    navView.visibility = GONE
+                }
+                else -> {
+                    navView.visibility = VISIBLE
+                }
+            }
+        }
     }
 }

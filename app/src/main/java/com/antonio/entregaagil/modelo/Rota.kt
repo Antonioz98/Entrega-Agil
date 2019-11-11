@@ -2,12 +2,13 @@ package com.antonio.entregaagil.modelo
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.antonio.entregaagil.assinantes
 
 class Rota() : Parcelable {
 
     var id: String = ""
     var descricao: String = "Rota padrao"
-    var assinantes: List<Assinante> = listOf()
+    var assinantes: List<Assinante> = assinantes()
 
     constructor(parcel: Parcel) : this() {
         id = parcel.readString().toString()
