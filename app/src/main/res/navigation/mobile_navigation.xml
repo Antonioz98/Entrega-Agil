@@ -26,8 +26,8 @@
 
     <fragment
         android:id="@+id/navigation_configuracao"
-        android:name="com.antonio.entregaagil.ui.fragment.AssinantesFragment"
-        tools:layout="@layout/fragment_assinantes" />
+        android:name="com.antonio.entregaagil.ui.fragment.ConfiguracaoFragment"
+        tools:layout="@layout/fragment_configuracao" />
 
     <fragment
         android:id="@+id/navigation_formulario_assinante"
