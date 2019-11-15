@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "426416356681",
+    "firebase_url": "https://entrega-agil.firebaseio.com",
+    "project_id": "entrega-agil",
+    "storage_bucket": "entrega-agil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426416356681:android:d6b1ab253cfc67c3876e98",
+        "android_client_info": {
+          "package_name": "com.antonio.entregaagil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426416356681-ekv8qvjkfslga3d849inu9qo7eu2qmf7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.entregaagil",
+            "certificate_hash": "f6b8ed4523e27f872deed9b24c497ae75c6a0132"
+          }
+        },
+        {
+          "client_id": "426416356681-12fo58pfsdrvv5ilo5kbod5u8lvrp0kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj2mweNX8hMs87grcWtdipyY2Y-2Q7RyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426416356681-12fo58pfsdrvv5ilo5kbod5u8lvrp0kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

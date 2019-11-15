@@ -10,12 +10,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.antonio.entregaagil.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mAuth = FirebaseAuth.getInstance()
         val navView: BottomNavigationView = findViewById(R.id.main_nav_view)
 
         val navController = findNavController(R.id.main_nav_host_fragment)
@@ -40,5 +45,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = mAuth.currentUser
     }
 }
