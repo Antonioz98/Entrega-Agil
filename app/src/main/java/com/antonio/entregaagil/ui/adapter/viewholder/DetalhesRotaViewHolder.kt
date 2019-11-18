@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.antonio.entregaagil.modelo.Assinante
 import kotlinx.android.synthetic.main.item_detalhe_rota.view.*
 
+const val NORMAL = 0
+const val DESVINCULAR = 1
 class DetalhesRotaViewHolder(private val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun binView(assinante: Assinante, clickListener: ((Assinante, Int) -> Unit)) {
@@ -24,6 +26,7 @@ class DetalhesRotaViewHolder(private val context: Context, itemView: View) : Rec
             itemView.detalhe_rota_complemento.text = assinante.complemento
         }
 
-        itemView.setOnClickListener { clickListener(assinante, adapterPosition) }
+        itemView.setOnClickListener { clickListener(assinante,NORMAL ) }
+        itemView.detalhe_rota_desvincular.setOnClickListener { clickListener(assinante,DESVINCULAR )}
     }
 }

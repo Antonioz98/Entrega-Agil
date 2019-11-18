@@ -6,16 +6,21 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.constante.ASSINANTE_TAG
+import com.antonio.entregaagil.constante.ROTA_TAG
 import com.antonio.entregaagil.extension.finalDoDia
 import com.antonio.entregaagil.extension.formataDataResumida
 import com.antonio.entregaagil.extension.inicioDoDia
 import com.antonio.entregaagil.modelo.Assinante
 import com.antonio.entregaagil.ui.dialog.PegarDataDialog
+import com.antonio.entregaagil.ui.viewmodel.AssinantesViewModel
 import kotlinx.android.synthetic.main.fragment_formulario_assinante.*
+import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
 class FormularioAssinanteFragment : Fragment() {
 
+
+    private val viewModel: AssinantesViewModel by viewModel()
     private val DATE_PICKER_FRAGMENT = "PEGAR_DATA_FRAGMENT"
     private val dataInicio = Calendar.getInstance().inicioDoDia()
     private val dataFim = Calendar.getInstance().finalDoDia()
@@ -37,7 +42,14 @@ class FormularioAssinanteFragment : Fragment() {
     private fun configuraBotaoSalvar() {
         fragment_formulario_assinante_salvar.setOnClickListener {
             if (camposValidos()) {
-                val assinante = Assinante()
+                val assinante: Assinante
+
+                if (arguments?.containsKey(ASSINANTE_TAG) == true) {
+                    assinante = arguments?.getParcelable<Assinante>(ASSINANTE_TAG)!!
+                } else {
+                    assinante = Assinante()
+                }
+
                 assinante.nome = fragment_formulario_assinante_nome.text.toString()
                 assinante.endereco = fragment_formulario_assinante_endereco.text.toString()
                 assinante.numero = fragment_formulario_assinante_numero.text.toString().toInt()
@@ -63,6 +75,10 @@ class FormularioAssinanteFragment : Fragment() {
     }
 
     private fun salvar(assinante: Assinante) {
+        arguments?.getString(ROTA_TAG, null)?.let {
+            assinante.rota = it
+        }
+        viewModel.cadastrarAssinante(assinante)
         activity?.onBackPressed()
     }
 
@@ -124,6 +140,8 @@ class FormularioAssinanteFragment : Fragment() {
     }
 
     private fun deletar() {
+        val assinante = arguments?.getParcelable<Assinante>(ASSINANTE_TAG)
+        viewModel.deletaAssinantes(assinante!!)
         activity?.onBackPressed()
     }
 

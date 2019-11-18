@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.constante.ROTA_TAG
 import com.antonio.entregaagil.modelo.Rota
-import com.antonio.entregaagil.rotas
 import com.antonio.entregaagil.ui.adapter.list.RotasAdapter
 import com.antonio.entregaagil.ui.viewmodel.RotasViewModel
 import kotlinx.android.synthetic.main.fragment_rotas.*
@@ -35,6 +34,7 @@ class RotasFragment : Fragment() {
 //        (activity as AppCompatActivity).supportActionBar?.hide()
         confguraFAB()
         configuraAdapter()
+        viewModel.atualizaListaDeRotas(adapter)
     }
 
     override fun onDestroyView() {
@@ -44,8 +44,6 @@ class RotasFragment : Fragment() {
 
     private fun configuraAdapter() {
         fragment_rotas_recyclerView.adapter = adapter
-        val rotas = rotas()
-        adapter.atualizaLista(rotas)
         adapter.clickListener = { rota, posicao ->
             abreDetalheDaRota(rota)
         }
@@ -55,21 +53,6 @@ class RotasFragment : Fragment() {
         val bundle = Bundle()
         bundle.putParcelable(ROTA_TAG, rota)
         fragment_rotas_recyclerView.findNavController().navigate(R.id.rotas_to_navigation_detalhes_rota, bundle)
-    }
-
-    private fun solicitaConfirmacaoParaExcluir(posicao: Int) {
-        val builder = AlertDialog.Builder(context!!)
-
-        builder.apply {
-            setTitle("Confirmação")
-            setMessage("Esta rota será excluído, deseja continuar?")
-            setPositiveButton("Sim") { _, _ ->
-                adapter.exclui(posicao)
-            }
-            setNegativeButton("nao") { _, _ -> }
-        }
-        val dialog = builder.create()
-        dialog.show()
     }
 
     private fun confguraFAB() {
@@ -96,7 +79,7 @@ class RotasFragment : Fragment() {
     private fun cadastraRota(descricao: String) {
         val rota = Rota()
         rota.descricao = descricao
-        adapter.adiciona(rota)
+        viewModel.atualizaRota(rota)
     }
 
     private fun scrollToFinal() {

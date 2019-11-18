@@ -5,6 +5,11 @@
     <color name="colorPrimaryLight">#8187ff</color>
     <color name="colorPrimaryDark">#0031ca</color>
 
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorTextORIcon">#FFFFFF</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorDivide">#BDBDBD</color>
+
     <color name="branco">#FFFFFF</color>
     <color name="brancoEscuro">#C9C9C9</color>
     <color name="cinzaClaro">#707070</color>

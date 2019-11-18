@@ -78,6 +78,17 @@
         tools:text="102" />
 
     <TextView
+        android:id="@+id/detalhe_rota_desvincular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/detalhe_rota_numero_ref"
+        android:textColor="@color/azul"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:text="Desvincular" />
+
+    <TextView
         android:id="@+id/detalhe_rota_bairro_ref"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,6 +114,7 @@
         app:layout_constraintStart_toEndOf="@id/detalhe_rota_bairro_ref"
         app:layout_constraintTop_toBottomOf="@id/detalhe_rota_numero"
         tools:text="Centro" />
+
 
     <TextView
         android:id="@+id/detalhe_rota_complemento_ref"

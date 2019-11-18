@@ -9,7 +9,6 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearSmoothScroller
 import com.antonio.entregaagil.R
-import com.antonio.entregaagil.assinantes
 import com.antonio.entregaagil.constante.ASSINANTE_TAG
 import com.antonio.entregaagil.modelo.Assinante
 import com.antonio.entregaagil.ui.adapter.list.AssinantesAdapter
@@ -31,12 +30,11 @@ class AssinantesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         confguraFAB()
         configuraAdapter()
+        viewModel.mantemListaAtualiza(adapter)
     }
 
     private fun configuraAdapter() {
         fragment_assinantes_recyclerView.adapter = adapter
-        val assinantes = assinantes()
-        adapter.atualizaLista(assinantes)
         adapter.clickListener = { assinante, posicao ->
             abreFormularioPreenchido(assinante, posicao)
         }

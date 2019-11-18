@@ -8,31 +8,23 @@
     android:paddingStart="12dp"
     android:paddingEnd="12dp">
 
-    <ImageView
-        android:id="@+id/assinante_inicial"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/background_redondo_amarelo" />
 
     <TextView
-        android:id="@+id/assinantes_nome"
+        android:id="@+id/assinantes_nome2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/lato"
         android:textColor="@color/pretoClaro"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/assinante_inicial"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nome e Sobrenome" />
 
     <TextView
-        android:id="@+id/assinante_endereco"
+        android:id="@+id/assinante_endereco2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -40,12 +32,12 @@
         android:fontFamily="@font/lato"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/assinante_inicial"
-        app:layout_constraintTop_toBottomOf="@id/assinantes_nome"
-        tools:text="Rua: Amaral da serra Nº102" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/assinantes_nome2"
+        tools:text="Rua: Amaral da serra" />
 
     <TextView
-        android:id="@+id/assinante_bairro"
+        android:id="@+id/assinante_numero2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -53,38 +45,23 @@
         android:fontFamily="@font/lato"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/assinante_inicial"
-        app:layout_constraintTop_toBottomOf="@id/assinante_endereco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/assinante_endereco2"
+        tools:text="Numero: 102" />
+
+    <TextView
+        android:id="@+id/assinante_bairro2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/lato"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/assinante_numero2"
         tools:text="Bairro: centro" />
 
-    <TextView
-        android:id="@+id/assinante_perido_assinatura"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/lato"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/assinante_inicial"
-        app:layout_constraintTop_toBottomOf="@id/assinante_bairro"
-        tools:text="Periodo de assinatura: 10/01/2019 - 10/01/2020" />
-
-    <TextView
-        android:id="@+id/assinante_sem_rota"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/lato"
-        android:text="Sem rota vinculada"
-        android:textColor="@color/vermelho"
-        android:textSize="12sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/assinante_inicial"
-        app:layout_constraintTop_toBottomOf="@id/assinante_perido_assinatura"
-        tools:visibility="visible" />
 
     <View
         android:id="@+id/divider"
@@ -97,7 +74,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/assinante_sem_rota" />
+        app:layout_constraintTop_toBottomOf="@id/assinante_bairro2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

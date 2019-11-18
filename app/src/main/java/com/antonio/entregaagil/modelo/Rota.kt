@@ -2,24 +2,22 @@ package com.antonio.entregaagil.modelo
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.antonio.entregaagil.assinantes
+import java.util.*
 
 class Rota() : Parcelable {
 
-    var id: String = ""
+    var id: String = UUID.randomUUID().toString()
     var descricao: String = "Rota padrao"
-    var assinantes: List<Assinante> = assinantes()
+    var assinantes: MutableList<Assinante> = mutableListOf()
 
     constructor(parcel: Parcel) : this() {
         id = parcel.readString().toString()
         descricao = parcel.readString().toString()
-        assinantes = (parcel.createTypedArrayList(Assinante) as List<Assinante>?)!!
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
         parcel.writeString(descricao)
-        parcel.writeTypedList(assinantes)
     }
 
     override fun describeContents(): Int {
@@ -35,4 +33,5 @@ class Rota() : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
 }

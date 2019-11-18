@@ -1,8 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.ConfiguracaoFragment">
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/configuracao_imageView"
+        android:layout_width="0dp"
+        android:layout_height="135dp"
+        android:src="@drawable/ic_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/configuracao_indica_rota"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Total de rotas"
+        android:gravity="center"
+        android:textColor="@color/cinza"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/configuracao_indica_assinantes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_imageView" />
+
+    <TextView
+        android:id="@+id/configuracao_indica_assinantes"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Total de assinantes"
+        android:gravity="center"
+        android:textColor="@color/cinza"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/configuracao_indica_assinantes_sem_rota"
+        app:layout_constraintStart_toEndOf="@id/configuracao_indica_rota"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_imageView" />
+
+    <TextView
+        android:id="@+id/configuracao_indica_assinantes_sem_rota"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Assinantes sem rotas"
+        android:gravity="center"
+        android:textColor="@color/cinza"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/configuracao_indica_assinantes"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_imageView" />
+
+    <TextView
+        android:id="@+id/configuracao_quantidade_rota"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu"
+        android:textAlignment="center"
+        android:textColor="@color/cinzaClaro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/configuracao_indica_rota"
+        app:layout_constraintStart_toStartOf="@id/configuracao_indica_rota"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_indica_rota"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/configuracao_quantidade_assinantes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu"
+        android:textAlignment="center"
+        android:textColor="@color/cinzaClaro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/configuracao_indica_assinantes"
+        app:layout_constraintStart_toStartOf="@id/configuracao_indica_assinantes"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_indica_assinantes"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/configuracao_quantidade_assinantes_sem_rota"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu"
+        android:textAlignment="center"
+        android:textColor="@color/cinzaClaro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/configuracao_indica_assinantes_sem_rota"
+        app:layout_constraintStart_toStartOf="@id/configuracao_indica_assinantes_sem_rota"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_indica_assinantes_sem_rota"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/configuracao_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ubuntu"
+        android:textAlignment="center"
+        android:textColor="@color/cinzaClaro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_quantidade_assinantes_sem_rota"
+        android:text="Nome para tesstar blz" />
+
+    <TextView
+        android:id="@+id/configuracao_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ubuntu"
+        android:textAlignment="center"
+        android:textColor="@color/cinzaClaro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/configuracao_nome"
+        android:text="email@gmail.com.br" />
+
+    <Button
+        android:id="@+id/configuracao_sair"
+        style="@style/AppButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
