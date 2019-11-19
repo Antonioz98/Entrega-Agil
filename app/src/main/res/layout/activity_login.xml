@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTitleApp"
+        android:id="@+id/acitivity_login_titulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_title_app"
@@ -19,18 +19,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSubtitleSignIn"
+        android:id="@+id/acitivity_login_mensagem_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:text="@string/text_subtitle_sign_in"
+        android:text="@string/faca_login_para_continuar"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_body_size"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleApp"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleApp" />
+        app:layout_constraintStart_toStartOf="@+id/acitivity_login_titulo_app"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_titulo_app" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmail"
+        android:id="@+id/acitivity_login_layout_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_input_layout"
@@ -39,14 +39,14 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitleSignIn">
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_mensagem_login">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titEmail"
+            android:id="@+id/acitivity_login_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryText"
-            android:hint="@string/text_hint_email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorPrimaryText"
@@ -55,20 +55,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPassword"
+        android:id="@+id/acitivity_login_layout_senha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
-        app:layout_constraintStart_toStartOf="@+id/tilEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_login_layout_email"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_login_layout_email"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_layout_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titPassword"
+            android:id="@+id/acitivity_login_input_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryText"
-            android:hint="@string/text_hint_password"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorPrimaryText"
@@ -78,78 +78,26 @@
 
 
     <Button
-        android:id="@+id/btnFirebaseSignIn"
+        android:id="@+id/acitivity_login_bota_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_btn"
         android:background="@color/colorAccent"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="@string/text_btn_sign_in"
+        android:text="@string/logar"
         android:textColor="@color/colorTextORIcon"
         android:textSize="@dimen/text_btn_size"
-        app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintStart_toStartOf="@+id/tilPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_login_layout_senha"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_login_layout_senha"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_layout_senha" />
 
     <TextView
-        android:id="@+id/tvOR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_standard"
-        android:fontFamily="@font/nunito_sans_reguler"
-        android:text="@string/text_or"
-        android:textColor="@color/colorSecondaryText"
-        android:textSize="@dimen/text_caption_size"
-        app:layout_constraintEnd_toEndOf="@+id/btnFirebaseSignIn"
-        app:layout_constraintStart_toStartOf="@+id/btnFirebaseSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/btnFirebaseSignIn" />
-
-    <View
-        android:id="@+id/vStrokeLeft"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginEnd="@dimen/margin_standard"
-        android:background="@color/colorDivide"
-        app:layout_constraintBottom_toBottomOf="@+id/tvOR"
-        app:layout_constraintStart_toStartOf="@+id/btnFirebaseSignIn"
-        app:layout_constraintEnd_toStartOf="@id/tvOR"
-        app:layout_constraintTop_toTopOf="@+id/tvOR" />
-
-    <View
-        android:id="@+id/vStrokeRight"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="@dimen/margin_standard"
-        android:background="@color/colorDivide"
-        app:layout_constraintBottom_toBottomOf="@+id/tvOR"
-        app:layout_constraintStart_toEndOf="@+id/tvOR"
-        app:layout_constraintEnd_toEndOf="@id/btnFirebaseSignIn"
-        app:layout_constraintTop_toTopOf="@+id/tvOR" />
-
-    <Button
-        android:id="@+id/btnGoogleSignIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_standard"
-        android:paddingStart="@dimen/padding_standard"
-        android:paddingEnd="@dimen/padding_standard"
-        android:background="@drawable/bg_btn"
-        android:drawableStart="@drawable/ic_google"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="@string/text_btn_google"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="@dimen/text_btn_size"
-        app:layout_constraintEnd_toEndOf="@+id/vStrokeRight"
-        app:layout_constraintStart_toStartOf="@+id/vStrokeLeft"
-        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
-
-    <TextView
-        android:id="@+id/tvToSignUp"
+        android:id="@+id/acitivity_login_cadastrar_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_standard"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:text="@string/text_to_sign_up"
+        android:text="@string/nao_tem_conta_cadastrar"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_caption_size"
         app:layout_constraintBottom_toBottomOf="parent"

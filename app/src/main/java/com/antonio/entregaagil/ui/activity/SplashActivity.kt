@@ -18,16 +18,16 @@ class SplashActivity : AppCompatActivity() {
         val animBounce = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.bounce)
         val animRotate = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.rotate)
 
-        ivIconApp.startAnimation(animBounce)
-        ivIconSplash.startAnimation(animRotate)
+        acitivity_splash_icone_app.startAnimation(animBounce)
+        acitivity_splash_loading.startAnimation(animRotate)
 
-        tvTitleSplash.alpha = 0f
-        tvTitleSplash.translationX = 500f
-        tvTitleSplash.animate().alpha(1f).translationX(0f).setDuration(800).setStartDelay(300).start()
+        acitivity_splash_titulo_app.alpha = 0f
+        acitivity_splash_titulo_app.translationX = 500f
+        acitivity_splash_titulo_app.animate().alpha(1f).translationX(0f).setDuration(800).setStartDelay(300).start()
 
-        tvSubtitleSplash.alpha = 0f
-        tvSubtitleSplash.translationX = 500f
-        tvSubtitleSplash.animate().alpha(1f).translationX(0f).setDuration(800).setStartDelay(600).start()
+        acitivity_splash_subtitulo_app.alpha = 0f
+        acitivity_splash_subtitulo_app.translationX = 500f
+        acitivity_splash_subtitulo_app.animate().alpha(1f).translationX(0f).setDuration(800).setStartDelay(600).start()
 
         val auth = FirebaseAuth.getInstance()
         Handler().postDelayed({

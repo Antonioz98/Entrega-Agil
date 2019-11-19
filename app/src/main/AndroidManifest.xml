@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.SignUpActivity" />
+        <activity android:name=".ui.activity.CadastrarActivity" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:theme="@style/AppTheme" />

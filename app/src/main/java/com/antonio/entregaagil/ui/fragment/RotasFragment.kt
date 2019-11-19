@@ -58,18 +58,18 @@ class RotasFragment : Fragment() {
     private fun confguraFAB() {
         fragment_rotas_fab.setOnClickListener {
             val builder = AlertDialog.Builder(context!!)
-            builder.setTitle("Descricao da nova rota")
+            builder.setTitle(getString(R.string.descricao_nova_rota))
             val input = EditText(context)
             input.inputType = InputType.TYPE_CLASS_TEXT
 
             val lp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
             input.layoutParams = lp
             builder.setView(input)
-            builder.setPositiveButton("Cadastrar") { dialog, which ->
+            builder.setPositiveButton(getString(R.string.cadastrar)) { dialog, which ->
                 cadastraRota(input.text.toString())
                 scrollToFinal()
             }
-            builder.setNegativeButton("Cancelar") { dialog, which -> dialog.cancel() }
+            builder.setNegativeButton(getString(R.string.cancelar)) { dialog, which -> dialog.cancel() }
 
             builder.show()
         }

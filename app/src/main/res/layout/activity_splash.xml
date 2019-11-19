@@ -7,18 +7,18 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/ivIconApp"
+        android:id="@+id/acitivity_splash_icone_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_standard"
         android:src="@drawable/ic_app"
-        app:layout_constraintBottom_toTopOf="@+id/tvTitleSplash"
-        app:layout_constraintEnd_toEndOf="@+id/tvTitleSplash"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleSplash"
+        app:layout_constraintBottom_toTopOf="@+id/acitivity_splash_titulo_app"
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_splash_titulo_app"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_splash_titulo_app"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/tvTitleSplash"
+        android:id="@+id/acitivity_splash_titulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_layout"
@@ -31,18 +31,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSubtitleSplash"
+        android:id="@+id/acitivity_splash_subtitulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:text="@string/text_subtitle_splash"
+        android:text="@string/subtitulo_app"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_body_size"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleSplash"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleSplash" />
+        app:layout_constraintStart_toStartOf="@+id/acitivity_splash_titulo_app"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_splash_titulo_app" />
 
     <ImageView
-        android:id="@+id/ivIconSplash"
+        android:id="@+id/acitivity_splash_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_ic_splash"

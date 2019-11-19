@@ -52,7 +52,4 @@ val appModules = module {
         //(id: Long) ->
         RotasViewModel(get<RotaHelper>(),get<AssinanteHelper>() )
     }
-//    single<NoticiaDAO> {
-//            get<AppDatabase>().noticiaDAO
-//        }
 }

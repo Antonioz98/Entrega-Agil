@@ -8,7 +8,6 @@
     android:paddingStart="12dp"
     android:paddingEnd="12dp">
 
-
     <TextView
         android:id="@+id/assinantes_nome2"
         android:layout_width="0dp"
@@ -75,6 +74,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/assinante_bairro2" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

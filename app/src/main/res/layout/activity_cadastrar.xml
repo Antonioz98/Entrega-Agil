@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTitleApp"
+        android:id="@+id/acitivity_cadastrar_titulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_title_app"
@@ -19,18 +19,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSubtitleSignUp"
+        android:id="@+id/acitivity_cadastrar_mensagem_cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:text="@string/text_subtitle_sign_up"
+        android:text="@string/cadastro_de_um_novo_usuario"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_body_size"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleApp"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleApp" />
+        app:layout_constraintStart_toStartOf="@+id/acitivity_cadastrar_titulo_app"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_cadastrar_titulo_app" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilName"
+        android:id="@+id/acitivity_cadastrar_layout_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_input_layout"
@@ -39,14 +39,14 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitleSignUp">
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_cadastrar_mensagem_cadastrar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titName"
+            android:id="@+id/acitivity_cadastrar_input_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryText"
-            android:hint="@string/text_hint_name"
+            android:hint="@string/nome"
             android:inputType="textPersonName"
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorPrimaryText"
@@ -55,20 +55,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmail"
+        android:id="@+id/acitivity_cadastrar_layout_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="@+id/tilName"
-        app:layout_constraintStart_toStartOf="@+id/tilName"
-        app:layout_constraintTop_toBottomOf="@+id/tilName">
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_cadastrar_layout_nome"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_cadastrar_layout_nome"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_cadastrar_layout_nome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titEmail"
+            android:id="@+id/acitivity_cadastrar_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryText"
-            android:hint="@string/text_hint_email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorPrimaryText"
@@ -77,20 +77,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPassword"
+        android:id="@+id/acitivity_cadastrar_layout_senha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
-        app:layout_constraintStart_toStartOf="@+id/tilEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_cadastrar_layout_email"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_cadastrar_layout_email"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_cadastrar_layout_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titPassword"
+            android:id="@+id/acitivity_cadastrar_input_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryText"
-            android:hint="@string/text_hint_password"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorPrimaryText"
@@ -99,21 +99,21 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnFirebaseSignUp"
+        android:id="@+id/acitivity_cadastrar_botao_cadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_btn"
         android:background="@color/colorAccent"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="@string/text_btn_sign_up"
+        android:text="@string/cadastrar"
         android:textColor="@color/colorTextORIcon"
         android:textSize="@dimen/text_btn_size"
-        app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintStart_toStartOf="@+id/tilPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/acitivity_cadastrar_layout_senha"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_cadastrar_layout_senha"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_cadastrar_layout_senha" />
 
     <TextView
-        android:id="@+id/tvToSignIn"
+        android:id="@+id/acitivity_cadastrar_logar_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_standard"

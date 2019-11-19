@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_rotas"
         android:icon="@drawable/ic_rota"
-        android:title="Rotas" />
+        android:title="@string/rotas" />
 
     <item
         android:id="@+id/navigation_assinantes"
         android:icon="@drawable/ic_assinante"
-        android:title="Assinantes" />
+        android:title="@string/assinantes" />
 
     <item
         android:id="@+id/navigation_configuracao"
         android:icon="@drawable/ic_engrenagem"
-        android:title="Configuração" />
+        android:title="@string/config" />
 
 </menu>

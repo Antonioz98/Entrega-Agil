@@ -31,31 +31,4 @@ class RotasAdapter(private val context: Context) : RecyclerView.Adapter<RotasVie
         this.rotas = rotas
         notifyDataSetChanged()
     }
-
-    fun altera(assinante: Rota?, posicao: Int?) {
-        if (assinante != null && posicao != null) {
-            val toMutableList = rotas.toMutableList()
-            toMutableList[posicao] = assinante
-            this.rotas = toMutableList
-            notifyItemChanged(posicao)
-        }
-    }
-
-    fun exclui(posicao: Int?) {
-        if (posicao != null) {
-            val toMutableList = rotas.toMutableList()
-            toMutableList.removeAt(posicao)
-            this.rotas = toMutableList
-            notifyItemRemoved(posicao)
-        }
-    }
-
-    fun adiciona(assinante: Rota?) {
-        if (assinante != null) {
-            val toMutableList = rotas.toMutableList()
-            toMutableList.add(assinante)
-            this.rotas = toMutableList
-            notifyItemInserted(this.rotas.size)
-        }
-    }
 }

@@ -2,26 +2,24 @@ package com.antonio.entregaagil.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.antonio.entregaagil.R
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import kotlinx.android.synthetic.main.activity_up_sign.*
+import kotlinx.android.synthetic.main.activity_cadastrar.*
 
-class SignUpActivity : AppCompatActivity() {
+class CadastrarActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_up_sign)
+        setContentView(R.layout.activity_cadastrar)
         auth = FirebaseAuth.getInstance()
 
-        btnFirebaseSignUp.setOnClickListener { cadastrarConta() }
-        tvToSignIn.setOnClickListener { abrirTelaDeLogin() }
+        acitivity_cadastrar_botao_cadastrar.setOnClickListener { cadastrarConta() }
+        acitivity_cadastrar_logar_textView.setOnClickListener { abrirTelaDeLogin() }
     }
 
     private fun abrirTelaDeLogin() {
@@ -35,18 +33,18 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun cadastrarConta() {
-        auth.createUserWithEmailAndPassword(titEmail.text.toString(), titPassword.text.toString())
+        auth.createUserWithEmailAndPassword(acitivity_cadastrar_input_email.text.toString(), acitivity_cadastrar_input_senha.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val build = UserProfileChangeRequest.Builder()
-                        .setDisplayName(titName.text.toString())
+                        .setDisplayName(acitivity_cadastrar_input_nome.text.toString())
                         .build()
 
                     auth.currentUser?.updateProfile(build)?.addOnCompleteListener {
                         abrirTelaInicial()
                     }
                 } else {
-                    Toast.makeText(baseContext, "Nao foi possivel cadastrar o usuario.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, getString(R.string.erro_cadastrar), Toast.LENGTH_SHORT).show()
                 }
 
             }

@@ -15,16 +15,9 @@
     <color name="cinzaClaro">#707070</color>
     <color name="cinza">#414141</color>
     <color name="pretoClaro">#1D1D1D</color>
-    <color name="preto">#000000</color>
-    <color name="pretoMeioTranparente">#80000000</color>
-    <color name="pretoTranparente">#33000000</color>
     <color name="vermelho">#D50000</color>
-    <color name="verde">#00C853</color>
     <color name="verdeAgua">#0BBF7C</color>
     <color name="azul">#009AFF</color>
-    <color name="amarelo">#FFD600</color>
     <color name="amareloClaro">#D1AE5D</color>
-    <color name="amareloEscuro">#E2B500</color>
-    <color name="laranja">#FF7031</color>
 
 </resources>

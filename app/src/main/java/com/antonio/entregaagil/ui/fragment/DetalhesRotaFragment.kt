@@ -48,7 +48,7 @@ class DetalhesRotaFragment : Fragment() {
         viewModel.getRota(rota).observe(this, Observer {
             it?.let {
                 fragment_detalhes_rota_titulo.text = it.descricao
-                fragment_detalhes_rota_quantida.text = "Assinantes: ${it.assinantes.size}/$ASSINANTES_POR_ROTA"
+                fragment_detalhes_rota_quantida.text = "${getString(R.string.assinantes)}: ${it.assinantes.size}/$ASSINANTES_POR_ROTA"
                 adapter.atualizaLista(it.assinantes)
             }
         })
@@ -84,14 +84,14 @@ class DetalhesRotaFragment : Fragment() {
                 val view = layoutInflater.inflate(R.layout.procurar_assinantes, null, false)
                 view.procurar_assinantes_lista.adapter = adapterAssinates
                 val alertDialog = AlertDialog.Builder(context!!)
-                    .setTitle("Selecione um assinante")
+                    .setTitle(getString(R.string.selecione_um_assinante))
                     .setView(view)
-                    .setPositiveButton("Cadastrar") { dialog, which ->
+                    .setPositiveButton(getString(R.string.cadastrar)) { _, _ ->
                         val bundle = Bundle()
                         bundle.putString(ROTA_TAG, rota.id)
                         fragment_detalhes_rota_fab.findNavController().navigate(R.id.detalhes_rota_to_navigation_formulario_assinante, bundle)
                     }
-                    .setNegativeButton("Cancelar") { dialog, which -> dialog.cancel() }
+                    .setNegativeButton(getString(R.string.cancelar)) { dialog, _ -> dialog.cancel() }
                     .show()
 
                 viewModel.atualizaListaDeAssinantesSemRotas(adapterAssinates)
@@ -101,14 +101,14 @@ class DetalhesRotaFragment : Fragment() {
                     alertDialog.dismiss()
                 }
             } else {
-                Toast.makeText(context, "So e possivel ter no maximo 9 assinantes por rota", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.maximo_rota_atingido), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun alteraDescricao() {
         val builder = AlertDialog.Builder(context!!)
-        builder.setTitle("Altera descricao da rota")
+        builder.setTitle(getString(R.string.alterar_descrica_rota))
         val input = EditText(context)
         input.inputType = InputType.TYPE_CLASS_TEXT
         input.setText(rota.descricao)
@@ -119,10 +119,10 @@ class DetalhesRotaFragment : Fragment() {
         )
         input.layoutParams = lp
         builder.setView(input)
-        builder.setPositiveButton("Alterar") { dialog, which ->
+        builder.setPositiveButton(getString(R.string.cadastrar)) { dialog, which ->
             atualizaDescricao(input)
         }
-        builder.setNegativeButton("Cancelar") { dialog, which -> dialog.cancel() }
+        builder.setNegativeButton(getString(R.string.cancelar)) { dialog, which -> dialog.cancel() }
 
         builder.show()
     }
@@ -147,12 +147,12 @@ class DetalhesRotaFragment : Fragment() {
         val builder = AlertDialog.Builder(context!!)
 
         builder.apply {
-            setTitle("Confirmação")
-            setMessage("Esta assinante sera retirado dessa rota, deseja continuar?")
-            setPositiveButton("Sim") { _, _ ->
+            setTitle(getString(R.string.confirmacao))
+            setMessage(getString(R.string.confirmacao_exclusao_assinante))
+            setPositiveButton(getString(R.string.sim)) { _, _ ->
                 desvincular(assinante)
             }
-            setNegativeButton("nao") { _, _ -> }
+            setNegativeButton(getString(R.string.nao)) { _, _ -> }
         }
         val dialog = builder.create()
         dialog.show()
@@ -179,12 +179,12 @@ class DetalhesRotaFragment : Fragment() {
         val builder = AlertDialog.Builder(context!!)
 
         builder.apply {
-            setTitle("Confirmação")
-            setMessage("Esta rota será excluído, deseja continuar?")
-            setPositiveButton("Sim") { _, _ ->
+            setTitle(getString(R.string.confirmacao))
+            setMessage(getString(R.string.confirmacao_exclusao_rota))
+            setPositiveButton(getString(R.string.sim)) { _, _ ->
                 deletar()
             }
-            setNegativeButton("nao") { _, _ -> }
+            setNegativeButton(getString(R.string.nao)) { _, _ -> }
         }
         val dialog = builder.create()
         dialog.show()

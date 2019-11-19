@@ -1,23 +1,44 @@
 <resources>
     <string name="app_name">Entrega Ágil</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
 
-    <string name="text_subtitle_splash">Help you manage the store</string>
-    <string name="text_subtitle_sign_in">Please SignIn to continue</string>
-    <string name="text_hint_email">Email</string>
-    <string name="text_hint_password">Password</string>
-    <string name="text_btn_forgot_password">Forgot password?</string>
-    <string name="text_btn_sign_in">Sign In</string>
-    <string name="text_or">OR</string>
-    <string name="text_btn_google">Google</string>
-    <string name="text_btn_facebook">Facebook</string>
-    <string name="text_to_sign_up">Don\'t have an account? <b><font color='#03A9F4'>SIGN UP</font></b></string>
-    <string name="text_subtitle_sign_up">Please SignUp for a new user</string>
-    <string name="text_hint_name">Name</string>
-    <string name="text_privacy_policy">I agree with <b><font color='#03A9F4'>Privacy</font></b> and <b><font color='#03A9F4'>Policy</font></b></string>
-    <string name="text_to_sign_in">Already have an account? <b><font color='#03A9F4'>SIGN IN</font></b></string>
-    <string name="text_btn_sign_up">Sign Up</string>
+    <string name="subtitulo_app">Controle de rotas</string>
+    <string name="faca_login_para_continuar">Por favor faça login para continuar</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="logar">Logar</string>
+    <string name="nao_tem_conta_cadastrar">Não tem um conta? <b><font color='#03A9F4'>CADASTRE-SE</font></b></string>
+    <string name="cadastro_de_um_novo_usuario">Cadastro de um novo usuário</string>
+    <string name="text_to_sign_in">Já possui uma conta? <b><font color='#03A9F4'>LOGIN</font></b></string>
+    <string name="falha_login">Não foi possivel encontrar a conta</string>
+    <string name="erro_cadastrar">Não foi possível cadastrar o usuário</string>
+    <string name="ate">até</string>
+    <string name="endereco">Endereço</string>
+    <string name="numero">Número</string>
+    <string name="bairro">Bairro</string>
+    <string name="cadastrados">Cadastrados</string>
+    <string name="assinantes">Assinantes</string>
+    <string name="selecione_um_assinante">Selecione um assinante</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="maximo_rota_atingido">Só é possível ter no máximo 9 assinantes por rota</string>
+    <string name="alterar_descrica_rota">Alterar descricao da rota</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="confirmacao_exclusao_assinante">Este assinante será retirado dessa rota, deseja continuar?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">nao</string>
+    <string name="confirmacao_exclusao_rota">Esta rota será excluída, deseja continuar?</string>
+    <string name="formulario_assinante">Formulario de assinante</string>
+    <string name="descricao_nova_rota">Descrição da nova rota</string>
+    <string name="deletar">Deletar</string>
+    <string name="editar">Editar</string>
+    <string name="rotas">Rotas</string>
+    <string name="config">Configuração</string>
+    <string name="total_rotas">Total de rotas</string>
+    <string name="total_assinante">Total de assinantes</string>
+    <string name="assinantes_sem_rotaas">Assinantes sem rotas</string>
+    <string name="sair">Sair</string>
+    <string name="salvar">Salvar</string>
+    <string name="complemento">informações complementares</string>
+    <string name="nome">Nome</string>
+    <string name="sem_rota_vinculada">Sem rota vínculada</string>
 </resources>

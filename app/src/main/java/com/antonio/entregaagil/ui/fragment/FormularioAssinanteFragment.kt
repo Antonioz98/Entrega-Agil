@@ -31,7 +31,7 @@ class FormularioAssinanteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
-        activity?.title = "Formulario de assinante"
+        activity?.title = getString(R.string.formulario_assinante)
 
         preencheCampos()
         configurarDataFinal()
@@ -128,12 +128,12 @@ class FormularioAssinanteFragment : Fragment() {
         val builder = AlertDialog.Builder(context!!)
 
         builder.apply {
-            setTitle("Confirmação")
-            setMessage("Este assinante será excluído, deseja continuar?")
-            setPositiveButton("Sim") { _, _ ->
+            setTitle(getString(R.string.confirmacao))
+            setMessage(getString(R.string.confirmacao_exclusao_assinante))
+            setPositiveButton(getString(R.string.sim)) { _, _ ->
                 deletar()
             }
-            setNegativeButton("nao") { _, _ -> }
+            setNegativeButton(getString(R.string.nao)) { _, _ -> }
         }
         val dialog = builder.create()
         dialog.show()

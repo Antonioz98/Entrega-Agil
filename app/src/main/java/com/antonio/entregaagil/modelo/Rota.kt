@@ -7,7 +7,7 @@ import java.util.*
 class Rota() : Parcelable {
 
     var id: String = UUID.randomUUID().toString()
-    var descricao: String = "Rota padrao"
+    var descricao: String = ""
     var assinantes: MutableList<Assinante> = mutableListOf()
 
     constructor(parcel: Parcel) : this() {

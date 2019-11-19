@@ -20,8 +20,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/ubuntu"
-        android:text="Total de rotas"
         android:gravity="center"
+        android:text="@string/total_rotas"
         android:textColor="@color/cinza"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -35,8 +35,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/ubuntu"
-        android:text="Total de assinantes"
         android:gravity="center"
+        android:text="@string/total_assinante"
         android:textColor="@color/cinza"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -50,8 +50,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/ubuntu"
-        android:text="Assinantes sem rotas"
         android:gravity="center"
+        android:text="@string/assinantes_sem_rotaas"
         android:textColor="@color/cinza"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="@id/configuracao_indica_rota"
         app:layout_constraintStart_toStartOf="@id/configuracao_indica_rota"
         app:layout_constraintTop_toBottomOf="@id/configuracao_indica_rota"
-        android:text="0" />
+        tools:text="0" />
 
     <TextView
         android:id="@+id/configuracao_quantidade_assinantes"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="@id/configuracao_indica_assinantes"
         app:layout_constraintStart_toStartOf="@id/configuracao_indica_assinantes"
         app:layout_constraintTop_toBottomOf="@id/configuracao_indica_assinantes"
-        android:text="0" />
+        tools:text="0" />
 
     <TextView
         android:id="@+id/configuracao_quantidade_assinantes_sem_rota"
@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="@id/configuracao_indica_assinantes_sem_rota"
         app:layout_constraintStart_toStartOf="@id/configuracao_indica_assinantes_sem_rota"
         app:layout_constraintTop_toBottomOf="@id/configuracao_indica_assinantes_sem_rota"
-        android:text="0" />
+        tools:text="0" />
 
     <TextView
         android:id="@+id/configuracao_nome"
@@ -110,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/configuracao_quantidade_assinantes_sem_rota"
-        android:text="Nome para tesstar blz" />
+        tools:text="Nome para tesstar blz" />
 
     <TextView
         android:id="@+id/configuracao_email"
@@ -124,18 +124,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/configuracao_nome"
-        android:text="email@gmail.com.br" />
+        tools:text="email@gmail.com.br" />
 
     <Button
         android:id="@+id/configuracao_sair"
         style="@style/AppButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sair"
-        android:textColor="@color/branco"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:text="@string/sair"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

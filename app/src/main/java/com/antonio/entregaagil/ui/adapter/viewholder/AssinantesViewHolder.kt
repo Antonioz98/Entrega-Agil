@@ -19,8 +19,10 @@ class AssinantesViewHolder(private val context: Context, itemView: View) :
         itemView.assinantes_nome.text = assinante.nome
         itemView.assinante_endereco.text = "${assinante.endereco}, ${assinante.numero}"
         itemView.assinante_bairro.text = assinante.bairro
-        itemView.assinante_perido_assinatura.text =
-            "${assinante.inicioAssinatura?.formataDataResumida() ?: "----"} até ${assinante.fimAssinatura?.formataDataResumida() ?: "----"}"
+        val de = assinante.inicioAssinatura?.formataDataResumida()
+        val ate = assinante.fimAssinatura?.formataDataResumida()
+        val ateString= context.getString(R.string.ate)
+        itemView.assinante_perido_assinatura.text ="${de ?: ""} $ateString ${ate ?: ""}"
         itemView.setOnClickListener { clickListener(assinante, adapterPosition) }
 
         if (assinante.rota == null) {

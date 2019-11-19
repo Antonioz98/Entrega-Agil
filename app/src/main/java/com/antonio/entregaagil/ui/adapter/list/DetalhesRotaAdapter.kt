@@ -32,31 +32,4 @@ class DetalhesRotaAdapter(private val context: Context) :
         this.assinantes = assinantes
         notifyDataSetChanged()
     }
-
-    fun altera(assinante: Assinante?, posicao: Int?) {
-        if (assinante != null && posicao != null) {
-            val toMutableList = assinantes.toMutableList()
-            toMutableList[posicao] = assinante
-            this.assinantes = toMutableList
-            notifyItemChanged(posicao)
-        }
-    }
-
-    fun exclui(posicao: Int?) {
-        if (posicao != null) {
-            val toMutableList = assinantes.toMutableList()
-            toMutableList.removeAt(posicao)
-            this.assinantes = toMutableList
-            notifyItemRemoved(posicao)
-        }
-    }
-
-    fun adiciona(assinante: Assinante?) {
-        if (assinante != null) {
-            val toMutableList = assinantes.toMutableList()
-            toMutableList.add(assinante)
-            this.assinantes = toMutableList
-            notifyItemInserted(this.assinantes.size)
-        }
-    }
 }
