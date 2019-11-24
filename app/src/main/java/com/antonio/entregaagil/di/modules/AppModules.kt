@@ -5,11 +5,9 @@ import com.antonio.entregaagil.database.AssinanteHelper
 import com.antonio.entregaagil.database.FirebaseHelper
 import com.antonio.entregaagil.database.RotaHelper
 import com.antonio.entregaagil.modelo.Usuario
-import com.antonio.entregaagil.ui.adapter.list.AssinantesAdapter
-import com.antonio.entregaagil.ui.adapter.list.AssinantesAdapter2
-import com.antonio.entregaagil.ui.adapter.list.DetalhesRotaAdapter
-import com.antonio.entregaagil.ui.adapter.list.RotasAdapter
+import com.antonio.entregaagil.ui.adapter.list.*
 import com.antonio.entregaagil.ui.viewmodel.AssinantesViewModel
+import com.antonio.entregaagil.ui.viewmodel.LoginViewModel
 import com.antonio.entregaagil.ui.viewmodel.RotasViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,6 +34,9 @@ val appModules = module {
     single<RotasAdapter> {
         RotasAdapter(get<Context>())
     }
+    single<RotasAdapter2> {
+        RotasAdapter2(get<Context>())
+    }
     single<FirebaseHelper> {
         FirebaseHelper((FirebaseFirestore.getInstance()))
     }
@@ -47,6 +48,9 @@ val appModules = module {
     }
     viewModel<AssinantesViewModel> {
         AssinantesViewModel(get<AssinanteHelper>())
+    }
+    viewModel<LoginViewModel> {
+        LoginViewModel(get<FirebaseAuth>())
     }
     viewModel<RotasViewModel> {
         //(id: Long) ->

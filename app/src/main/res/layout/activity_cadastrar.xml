@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ProgressBar
+        android:id="@+id/activity_cadastrar_login_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/acitivity_cadastrar_titulo_app"
         android:layout_width="wrap_content"
@@ -103,7 +116,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_btn"
-        android:background="@color/colorAccent"
+        android:background="@drawable/botao_principal"
         android:fontFamily="@font/nunito_sans_bold"
         android:text="@string/cadastrar"
         android:textColor="@color/colorTextORIcon"

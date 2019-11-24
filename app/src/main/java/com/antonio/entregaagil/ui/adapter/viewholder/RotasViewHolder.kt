@@ -10,10 +10,11 @@ import kotlinx.android.synthetic.main.item_rota.view.*
 
 class RotasViewHolder(private val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun binView(rota: Rota, clickListener: ((Rota, Int) -> Unit)) {
+    fun binView(rota: Rota, clickListener: ((Rota, Int?) -> Unit)) {
         itemView.item_rota_descricao.text = rota.descricao
         val cadastrados = context.getString(R.string.cadastrados)
         itemView.item_rota_quantidade.text = "$cadastrados: ${rota.assinantes.size}/$ASSINANTES_POR_ROTA"
-        itemView.setOnClickListener { clickListener(rota, adapterPosition) }
+        itemView.setOnClickListener { clickListener(rota, null) }
+        itemView.item_rota_iniciar_rota.setOnClickListener { clickListener(rota, adapterPosition) }
     }
 }

@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -19,7 +19,6 @@ import com.antonio.entregaagil.constante.ASSINANTE_TAG
 import com.antonio.entregaagil.constante.ROTA_TAG
 import com.antonio.entregaagil.modelo.Assinante
 import com.antonio.entregaagil.modelo.Rota
-import com.antonio.entregaagil.ui.adapter.list.AssinantesAdapter
 import com.antonio.entregaagil.ui.adapter.list.AssinantesAdapter2
 import com.antonio.entregaagil.ui.adapter.list.DetalhesRotaAdapter
 import com.antonio.entregaagil.ui.adapter.viewholder.DESVINCULAR
@@ -42,8 +41,6 @@ class DetalhesRotaFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        setHasOptionsMenu(true)
-
         rota = arguments?.getParcelable(ROTA_TAG)!!
         viewModel.getRota(rota).observe(this, Observer {
             it?.let {
@@ -68,21 +65,23 @@ class DetalhesRotaFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        (activity as AppCompatActivity).supportActionBar?.hide()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (activity as AppCompatActivity).supportActionBar?.show()
-    }
-
     private fun confguraFab() {
         fragment_detalhes_rota_fab.setOnClickListener {
             if (rota.assinantes.size < 9) {
                 val view = layoutInflater.inflate(R.layout.procurar_assinantes, null, false)
                 view.procurar_assinantes_lista.adapter = adapterAssinates
+                view.procurar_assinantes_procurar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(p0: String?): Boolean {
+
+                        return false
+                    }
+
+                    override fun onQueryTextChange(p0: String?): Boolean {
+                        p0?.let { adapterAssinates.filter(it) }
+                        return false
+                    }
+
+                })
                 val alertDialog = AlertDialog.Builder(context!!)
                     .setTitle(getString(R.string.selecione_um_assinante))
                     .setView(view)

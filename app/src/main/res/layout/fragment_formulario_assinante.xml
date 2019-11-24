@@ -11,101 +11,161 @@
         android:layout_height="wrap_content"
         android:paddingBottom="25dp">
 
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_nome"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_nome_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/nome"
+            app:errorEnabled="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:hint="@string/nome"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_endereco"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_endereco_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:hint="@string/endereco"
-            app:layout_constraintEnd_toStartOf="@id/fragment_formulario_assinante_numero"
+            android:layout_marginTop="15dp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/fragment_formulario_assinante_numero_layout"
             app:layout_constraintHorizontal_weight="3"
-            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
-            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_nome" />
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome_layout"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_nome_layout" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:hint="@string/endereco"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_numero"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_numero_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/numero"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_nome"
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_nome_layout"
             app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_endereco"
-            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_endereco" />
+            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_endereco_layout"
+            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_endereco_layout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_numero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:hint="@string/numero"
+                android:inputType="number"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_bairro"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_bairro_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:hint="@string/bairro"
-            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_numero"
-            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
-            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_endereco" />
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_numero_layout"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome_layout"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_endereco_layout" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_bairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:hint="@string/bairro"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_inicio_assinatura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_calendario"
-            android:drawablePadding="8dp"
-            android:focusable="false"
-            android:hint="__/__/____"
-            android:inputType="date"
-            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
-            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_bairro" />
 
-        <TextView
-            android:id="@+id/fragment_formulario_assinante_assinatura_ate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/ate"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/fragment_formulario_assinante_inicio_assinatura"
-            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_inicio_assinatura"
-            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_inicio_assinatura" />
-
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_termino_assinatura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_calendario"
-            android:drawablePadding="8dp"
-            android:focusable="false"
-            android:hint="__/__/____"
-            android:inputType="date"
-            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_assinatura_ate"
-            app:layout_constraintTop_toTopOf="@id/fragment_formulario_assinante_inicio_assinatura" />
-
-        <EditText
-            android:id="@+id/fragment_formulario_assinante_complemento"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_complemento_layout"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_numero_layout"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome_layout"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_bairro_layout" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_complemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:hint="@string/complemento"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_inicio_assinatura_layout"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:background="@drawable/borda_preta"
-            android:gravity="start"
-            android:hint="@string/complemento"
-            android:padding="4dp"
-            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_nome"
-            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome"
-            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_inicio_assinatura" />
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_nome_layout"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_complemento_layout" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_inicio_assinatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:cursorVisible="false"
+                android:drawableStart="@drawable/ic_calendario"
+                android:drawablePadding="3dp"
+                android:focusable="false"
+                android:hint="@string/inicio_assinatura"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_formulario_assinante_termino_assinatura_layout"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:inputType="date"
+            app:layout_constraintStart_toEndOf="@id/fragment_formulario_assinante_inicio_assinatura_layout"
+            app:layout_constraintTop_toTopOf="@+id/fragment_formulario_assinante_inicio_assinatura_layout" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_formulario_assinante_termino_assinatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryText"
+                android:drawablePadding="3dp"
+                android:cursorVisible="false"
+                android:drawableStart="@drawable/ic_calendario"
+                android:focusable="false"
+                android:hint="@string/termino_assinatura"
+                android:textColor="@color/colorPrimaryText"
+                android:textColorHint="@color/colorPrimaryText"
+                android:textSize="@dimen/text_body_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/fragment_formulario_assinante_salvar"
@@ -113,12 +173,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="25dp"
             android:text="@string/salvar"
             android:textColor="@color/branco"
-            app:layout_constraintEnd_toEndOf="@id/fragment_formulario_assinante_complemento"
-            app:layout_constraintStart_toStartOf="@id/fragment_formulario_assinante_complemento"
-            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_complemento" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_formulario_assinante_termino_assinatura_layout" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -6,24 +6,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.modelo.Rota
-import com.antonio.entregaagil.ui.adapter.viewholder.RotasViewHolder
+import com.antonio.entregaagil.ui.adapter.viewholder.RotasViewHolder2
 
-class RotasAdapter(private val context: Context) : RecyclerView.Adapter<RotasViewHolder>() {
+class RotasAdapter2(private val context: Context) : RecyclerView.Adapter<RotasViewHolder2>() {
 
     var rotas: List<Rota> = listOf()
     var clickListener: ((Rota, Int?) -> Unit) = { _, _ -> }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RotasViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_rota, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RotasViewHolder2 {
+        val view = LayoutInflater.from(context).inflate(R.layout.item_rotas2, parent, false)
 
-        return RotasViewHolder(context, view)
+        return RotasViewHolder2(context, view)
     }
 
     override fun getItemCount(): Int {
         return rotas.size
     }
 
-    override fun onBindViewHolder(holder: RotasViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RotasViewHolder2, position: Int) {
         holder.binView(rotas[position], clickListener)
     }
 

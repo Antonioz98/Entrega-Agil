@@ -1,5 +1,6 @@
 package com.antonio.entregaagil.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import com.antonio.entregaagil.R
 import com.antonio.entregaagil.constante.ROTA_TAG
 import com.antonio.entregaagil.modelo.Rota
+import com.antonio.entregaagil.ui.activity.MapsActivity
 import com.antonio.entregaagil.ui.adapter.list.RotasAdapter
 import com.antonio.entregaagil.ui.viewmodel.RotasViewModel
 import kotlinx.android.synthetic.main.fragment_rotas.*
@@ -31,21 +33,22 @@ class RotasFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        (activity as AppCompatActivity).supportActionBar?.hide()
         confguraFAB()
         configuraAdapter()
         viewModel.atualizaListaDeRotas(adapter)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-//        (activity as AppCompatActivity).supportActionBar?.show()
-    }
-
     private fun configuraAdapter() {
         fragment_rotas_recyclerView.adapter = adapter
         adapter.clickListener = { rota, posicao ->
-            abreDetalheDaRota(rota)
+            if (posicao != null) {
+                val intent = Intent(context, MapsActivity::class.java)
+                intent.putParcelableArrayListExtra("rotas", ArrayList(adapter.rotas))
+                intent.putExtra("posicao", posicao)
+                startActivity(intent)
+            } else {
+                abreDetalheDaRota(rota)
+            }
         }
     }
 

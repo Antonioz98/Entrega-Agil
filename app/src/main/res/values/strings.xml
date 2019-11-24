@@ -9,7 +9,7 @@
     <string name="nao_tem_conta_cadastrar">Não tem um conta? <b><font color='#03A9F4'>CADASTRE-SE</font></b></string>
     <string name="cadastro_de_um_novo_usuario">Cadastro de um novo usuário</string>
     <string name="text_to_sign_in">Já possui uma conta? <b><font color='#03A9F4'>LOGIN</font></b></string>
-    <string name="falha_login">Não foi possivel encontrar a conta</string>
+    <string name="falha_login">Não foi possível fazer o login </string>
     <string name="erro_cadastrar">Não foi possível cadastrar o usuário</string>
     <string name="ate">até</string>
     <string name="endereco">Endereço</string>
@@ -38,7 +38,15 @@
     <string name="assinantes_sem_rotaas">Assinantes sem rotas</string>
     <string name="sair">Sair</string>
     <string name="salvar">Salvar</string>
-    <string name="complemento">informações complementares</string>
+    <string name="complemento">Complemento</string>
     <string name="nome">Nome</string>
     <string name="sem_rota_vinculada">Sem rota vínculada</string>
+    <string name="erro_edit_text_email">Preencha o email</string>
+    <string name="erro_edit_text_senha">Preencha a senha</string>
+    <string name="erro_verique_informacoes">Verifique as Informações</string>
+    <string name="erro_edit_text_nome">Preencha o nome</string>
+    <string name="inicio_assinatura">Inicio da assinatura</string>
+    <string name="termino_assinatura">Fim da assinatura</string>
+    <string name="campo_obrigatorio">Campo obrigatório</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
