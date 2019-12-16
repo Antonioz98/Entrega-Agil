@@ -1,6 +1,7 @@
 package com.antonio.entregaagil.ui.fragment
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -42,10 +43,28 @@ class RotasFragment : Fragment() {
         fragment_rotas_recyclerView.adapter = adapter
         adapter.clickListener = { rota, posicao ->
             if (posicao != null) {
-                val intent = Intent(context, MapsActivity::class.java)
-                intent.putParcelableArrayListExtra("rotas", ArrayList(adapter.rotas))
-                intent.putExtra("posicao", posicao)
+                val destination =
+                    "destination=${Uri.encode("${rota.assinantes[0].endereco} ${rota.assinantes[0].numero}, ${rota.assinantes[0].bairro}, Garça")}"
+
+                val mode = "travelmode=driving"
+                var wayPoints = "waypoints="
+                rota.assinantes.forEachIndexed { index, assinante ->
+                    if (index != 0) {
+                        val endereco = Uri.encode("${assinante.endereco} ${assinante.numero}, ${assinante.bairro}, Garça")
+                        wayPoints = "$wayPoints$endereco|"
+                    }
+                }
+
+                val navigation = "https://www.google.com/maps/dir/?api=1&$destination&$mode&$wayPoints"
+                val navigationUri = Uri.parse(navigation)
+                val intent = Intent(Intent.ACTION_VIEW, navigationUri)
+
+                intent.setPackage("com.google.android.apps.maps")
                 startActivity(intent)
+//                val intent = Intent(context, MapsActivity::class.java)
+//                intent.putParcelableArrayListExtra("rotas", ArrayList(adapter.rotas))
+//                intent.putExtra("posicao", posicao)
+//                startActivity(intent)
             } else {
                 abreDetalheDaRota(rota)
             }
