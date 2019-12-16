@@ -15,6 +15,9 @@ class RotasViewHolder(private val context: Context, itemView: View) : RecyclerVi
         val cadastrados = context.getString(R.string.cadastrados)
         itemView.item_rota_quantidade.text = "$cadastrados: ${rota.assinantes.size}/$ASSINANTES_POR_ROTA"
         itemView.setOnClickListener { clickListener(rota, null) }
-        itemView.item_rota_iniciar_rota.setOnClickListener { clickListener(rota, adapterPosition) }
+        itemView.item_rota_iniciar_rota.setOnClickListener {
+            if (rota.assinantes.size > 0)
+                clickListener(rota, adapterPosition)
+        }
     }
 }

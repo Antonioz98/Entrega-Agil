@@ -45,6 +45,7 @@ class FormularioAssinanteFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
+
     private fun configuraBotaoSalvar() {
         fragment_formulario_assinante_salvar.setOnClickListener {
             if (camposValidos()) {
@@ -157,6 +158,7 @@ class FormularioAssinanteFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_deletar -> solicitaConfirmacaoParaExcluir()
+            android.R.id.home -> activity?.onBackPressed()
         }
         return super.onOptionsItemSelected(item)
     }

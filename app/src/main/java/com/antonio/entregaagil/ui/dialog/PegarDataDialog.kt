@@ -15,8 +15,6 @@ class PegarDataDialog(private val dataSelecionada: (view: DatePicker?, ano: Int,
         val ano = calendar.get(Calendar.YEAR)
         val mes = calendar.get(Calendar.MONTH)
         val dia = calendar.get(Calendar.DAY_OF_MONTH)
-        val pegarData = DatePickerDialog(context!!, dataSelecionada, ano, mes, dia)
-        pegarData.datePicker.maxDate = calendar.timeInMillis
-        return pegarData
+        return DatePickerDialog(context!!, dataSelecionada, ano, mes, dia)
     }
 }

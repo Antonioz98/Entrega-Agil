@@ -5,7 +5,7 @@
     <string name="faca_login_para_continuar">Por favor faça login para continuar</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
-    <string name="logar">Logar</string>
+    <string name="logar">Login</string>
     <string name="nao_tem_conta_cadastrar">Não tem um conta? <b><font color='#03A9F4'>CADASTRE-SE</font></b></string>
     <string name="cadastro_de_um_novo_usuario">Cadastro de um novo usuário</string>
     <string name="text_to_sign_in">Já possui uma conta? <b><font color='#03A9F4'>LOGIN</font></b></string>
